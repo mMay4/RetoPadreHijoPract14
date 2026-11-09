@@ -1,0 +1,17 @@
+<main class="container">
+  <header class="header-cart">
+    <div>
+      <h1>Inscripción a cursos</h1>
+      <p class="subtitulo">Selecciona los cursos que deseas estudiar.</p>
+    </div>
+    <p class="cart-info">Inscritos: <span>{{ cantidadInscritos }}</span> · Total a pagar: <span>Bs {{ total }}</span></p>
+  </header>
+  <section class="grid-productos" aria-label="Cursos disponibles">
+    @for (curso of cursos; track curso.id) {
+      <app-curso-card
+        [curso]="curso"
+        [inscrito]="estaInscrito(curso)"
+        (inscribirse)="inscribir($event)" />
+    }
+  </section>
+</main>

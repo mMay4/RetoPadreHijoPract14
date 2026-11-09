@@ -1,0 +1,12 @@
+<article class="card">
+  <div class="card-head">
+    <span class="etiqueta">Curso</span>
+    @if (inscrito) { <span class="estado">Inscrito ✓</span> }
+  </div>
+  <h3 class="card-title">{{ curso.nombre }}</h3>
+  <p class="card-hours">Duración: {{ curso.horas }} horas</p>
+  <p class="card-price">Bs {{ curso.precio }}</p>
+  <button type="button" class="btn-agregar" [disabled]="inscrito" (click)="alInscribirse()">
+    Inscribirme
+  </button>
+</article>
